@@ -24,5 +24,11 @@ camera.position.z = 2; // scootch the camera back a little
 // set up the scene
 const scene = new THREE.Scene();
 
+// add some basic primitives to the scene
+const geo = new THREE.IcosahedronGeometry(1.0, 2); // size and detail params
+const mat = new THREE.MeshBasicMaterial({ color: 0xccff });
+const mesh = new THREE.Mesh(geo, mat);
+scene.add(mesh);
+
 // render the scene
-renderer.render(scene, camera)
+renderer.render(scene, camera);
